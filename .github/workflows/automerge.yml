@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: auto merge
+
+# Controls when the action will run. 
+on:
+  status: {}
+  pull_request:
+    types:
+      - synchronize
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: hmarr/debug-action@77362823f8ec784254e836171e7d4ec3f8c5ee89
+  automerge:
+    if: github.event.action == 'synchronize' && github.event.state == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pascalgn/automerge-action@2c8e667a3386187418587517e5bfe33470d19b5b
+        env:
+          MERGE_METHOD: rebase
+          UPDATE_METHOD: rebase
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

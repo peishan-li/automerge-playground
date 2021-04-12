@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: hmarr/auto-approve-action@v2.0.0
-      if: github.actor == 'pull[bot]' && contains(github.event.pull_request.labels.*.name, 'pull-bot') && !contains(github.event.pull_request.labels.*.name, 'merge-conflict')
+      if: github.actor == 'pull[bot]'
       with:
         github-token: "${{ secrets.GITHUB_TOKEN }}"

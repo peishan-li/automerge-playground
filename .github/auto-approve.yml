@@ -1,7 +1,7 @@
 name: Auto approve
 
 on:
-  master
+  main
 
 jobs:
   auto-approve:

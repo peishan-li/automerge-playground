@@ -1,5 +1,6 @@
+version: "1"
 rules:
   - base: main
     upstream: peishan-li:main
-    mergeMethod: merge
+    mergeMethod: hardreset
 label: "pull-bot"

@@ -1,4 +1,4 @@
-- base: master
+- base: main
     upstream: release/rapid
     mergeMethod: merge
 label: "pull-bot"
